@@ -32,6 +32,7 @@ for dataval in data:
 
 # Calling influxDB client and writing into it for storage.
 # Measurement and Fields are mandatory {tags are optional}
+# https://docs.influxdata.com/influxdb/v1.8/concepts/key_concepts/#field-key
 dbconn.client.write_points([{"measurement": "cpu", "fields": val}])
 
 
