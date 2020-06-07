@@ -11,12 +11,11 @@ response = requests.get(url, headers=headers)
 data = response.json()
 
 if response.status_code != 200:
-    print('Error occurred to get the data:', response.status_code)
+    print('Error occurred to get the data from API call:', response.status_code)
 else:
-    print('Metrics data sent to influxDB for storage, please check influxDB now.')
+    print('API call success. Metrics data sent to influxDB for storage, please check influxDB now.')
 
 val = 0
-
 for dataval in data:
 
     # Formatting and conversion not required.
@@ -24,12 +23,15 @@ for dataval in data:
     # ts_str = str(ts)
     # print(ts_str)
 
+    # Converting into Dictionary
     val = {
         'timestamp': dataval[0],
         'granularity': dataval[1],
         'value': dataval[2]
     }
 
+# Calling influxDB client and writing into it for storage.
+# Measurement and Fields are mandatory {tags are optional}
 dbconn.client.write_points([{"measurement": "cpu", "fields": val}])
 
 
