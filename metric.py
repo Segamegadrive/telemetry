@@ -1,10 +1,10 @@
 import requests
 import dbconn
-import datetime as dt
+#import datetime as dt
 
 url = "http://aio-2521:8041/v1/metric/6ca53dea-a827-4205-9fcb-59b6da7c470e/measures"
 headers = {
-    'X-Auth-Token': 'gAAAAABe3N1tLSiJVCo4IuKyBjF_ZmBUxfb72Pe-zdo2rtYgxoel0VBD9imeecfKicw15mYnkW-ctFBSzt73UPEsRrpr9DfCE3v9r-0awu1SNO-aRyn0TAaka5nU9sQxwa6KVZuRg3BFqsJbfTIyNx0RXaji66A_1Dj5Wm_P5tdYpYALI9x53Hc',
+    'X-Auth-Token': 'gAAAAABe_562XC-eSH69KHsmLADY3n-3saWOCi0O-iVpazku1PL1wkjGXZl4bDP3GVOyPuTFqN2kynNV6vrmIsyy_uyN7sK-TlNc_0F-WZ7ugUaIyDnomUrQe7vikrBzXXzVx6_SZeda3VT1Wn4uKSxGa4Kjnn8V2CsscXdIFpm_aUC2qAOQJS4',
     'Content-Type': 'application/json;charset=utf-8'
 }
 response = requests.get(url, headers=headers)
